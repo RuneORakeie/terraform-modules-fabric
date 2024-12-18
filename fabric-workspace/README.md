@@ -67,7 +67,7 @@ module "test_module" {
   display_name         = "Test workspace"
   description          = "My test workspace"
   capacity_id          = data.fabric_capacity.capacity.id
-  identity_type = "SystemAssigned"
+  identity_type        = "SystemAssigned"
   role_assignment_list = [
     {
         principal_id   = data.azuread.contributor_group.object_id
