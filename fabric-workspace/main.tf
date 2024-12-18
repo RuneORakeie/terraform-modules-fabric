@@ -12,8 +12,8 @@ terraform {
 }
 resource "fabric_workspace" "fab_ws" {
   display_name = var.display_name
-  description  = var.description
-  capacity_id  = var.capacity_id
+  description  = var.description != null ? var.description : null
+  capacity_id  = var.capacity_id != null ? var.capacity_id : null
   dynamic "identity" {
     for_each = var.identity_type != null ? [1] : []
     content {

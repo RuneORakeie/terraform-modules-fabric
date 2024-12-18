@@ -15,7 +15,7 @@ variable "description" {
 variable "identity_type" {
   description = "The identity type of the Workspace. The default value is SystemAssigned"
   type        = string
-  default     = null
+  #default     = null
 }
 
 variable "role_assignment_list" {
