@@ -52,7 +52,7 @@ module my_fab_ws {
 }
 ```
 
-### Example 1. Create workspace without RBAC role assignment 
+### Example 1. Create workspace without role assignment 
 ```hcl
 module "test_module" {
   source               = "github.com/RuneORakeie/terraform-modules-fabric//fabric-workspace?ref=VERSION"
