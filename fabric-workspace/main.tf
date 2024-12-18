@@ -18,7 +18,7 @@ resource "fabric_workspace" "fab_ws" {
   identity     = var.identity_type != null ? { type = var.identity_type } : null
 }
 
-resource "fabric_workspace_role_assignment" "precon_datasummit_ws_contributor" {
+resource "fabric_workspace_role_assignment" "fab_ws_role_assign" {
   for_each       = { for idx, assignment in var.role_assignment_list : tostring(idx) => assignment }
   workspace_id   = fabric_workspace.fab_ws.id
   principal_id   = each.value.principal_id
