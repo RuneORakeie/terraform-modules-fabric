@@ -10,16 +10,12 @@ terraform {
     }
   }
 }
+
 resource "fabric_workspace" "fab_ws" {
   display_name = var.display_name
   description  = var.description != null ? var.description : null
   capacity_id  = var.capacity_id != null ? var.capacity_id : null
-  dynamic "identity" {
-    for_each = var.identity_type != null ? [1] : []
-    content {
-      type = var.identity_type
-    }
-  }
+  identity     = var.identity_type != null ? { type = var.identity_type } : null
 }
 
 resource "fabric_workspace_role_assignment" "precon_datasummit_ws_contributor" {
