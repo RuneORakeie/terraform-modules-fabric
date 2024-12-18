@@ -9,7 +9,7 @@ Create a Fabric workspace and assign role for a specific type of principal.
 When sourcing the module in your Terraform code note that you need a double-slash before module folder: 
 ```hcl
 module my_fab_ws {
-    source              = "github.com/RuneORakeie/terraform-modules-fabric==//==fabric-workspace?ref=VERSION"
+    source              = "github.com/RuneORakeie/terraform-modules-fabric//fabric-workspace?ref=VERSION"
     ...
     ...
 }
@@ -23,7 +23,7 @@ module my_fab_ws {
 |identity_type|The identity type of the Workspace. The only valid value is `SystemAssigned`|string||yes|
 |role_assignment_list|A list of role assignments definitions to create for the Workspace. See below||no|
 
-#### *role_assignment_list definition:*
+#### <u>role_assignment_list definition:</u>
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:-----:|
 |principal_id|The Principal ID| string || required |
