@@ -5,14 +5,17 @@ variable "display_name" {
 variable "capacity_id" {
   description = "The ID of the Fabric Capacity to assign to the Workspace."
   type        = string
+  default     = null
 }
 variable "description" {
   description = "The Workspace description."
   type        = string
+  default     = null
 }
 variable "identity_type" {
   description = "The identity type of the Workspace. The default value is SystemAssigned"
   type        = string
+  default     = null
 }
 
 variable "role_assignment_list" {

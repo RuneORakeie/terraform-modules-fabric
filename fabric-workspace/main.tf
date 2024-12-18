@@ -14,8 +14,11 @@ resource "fabric_workspace" "fab_ws" {
   display_name = var.display_name
   description  = var.description
   capacity_id  = var.capacity_id
-  identity {
-    type = var.identity_type
+  dynamic "identity" {
+    for_each = var.identity_type != null ? [1] : []
+    content {
+      type = var.identity_type
+    }
   }
 }
 
