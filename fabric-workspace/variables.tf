@@ -25,6 +25,7 @@ variable "role_assignment_list" {
     principal_type = string
     role           = string
   }))
+  default = []
   validation {
     condition = alltrue([
       for assignment in var.role_assignment_list :

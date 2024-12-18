@@ -19,7 +19,7 @@ resource "fabric_workspace" "fab_ws" {
 }
 
 resource "fabric_workspace_role_assignment" "precon_datasummit_ws_contributor" {
-  for_each       = { for assignment in var.role_assignment_list : assignment.principal_id => assignment }
+  for_each       = { for idx, assignment in var.role_assignment_list : tostring(idx) => assignment }
   workspace_id   = fabric_workspace.fab_ws.id
   principal_id   = each.value.principal_id
   principal_type = each.value.principal_type
