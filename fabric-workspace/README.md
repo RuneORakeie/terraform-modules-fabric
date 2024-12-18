@@ -9,7 +9,7 @@ Create a Fabric workspace and assign role for a specific type of principal.
 When sourcing the module in your Terraform code note that you need a double-slash before module folder: 
 ```hcl
 module my_fab_ws {
-    source              = "github.com/RuneORakeie/terraform-modules-fabric//fabric-workspace?ref=VERSION"
+    source              = "github.com/RuneORakeie/terraform-modules-fabric==//==fabric-workspace?ref=VERSION"
     ...
     ...
 }
