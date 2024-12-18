@@ -23,7 +23,7 @@ module my_fab_ws {
 |identity_type|The identity type of the Workspace. The only valid value is `SystemAssigned`|string||yes|
 |role_assignment_list|A list of role assignments definitions to create for the Workspace. See below||no|
 
-#### <u>role_assignment_list definition:</u>
+#### <ins>role_assignment_list definition:</ins>
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-------:|:-----:|
 |principal_id|The Principal ID| string || required |
