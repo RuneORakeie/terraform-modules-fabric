@@ -10,18 +10,18 @@ terraform {
     }
   }
 }
+
 resource "fabric_workspace" "fab_ws" {
   display_name = var.display_name
-  description  = var.description
-  capacity_id  = var.capacity_id
-  identity {
-    type = var.identity_type
-  }
+  description  = var.description != null ? var.description : null
+  capacity_id  = var.capacity_id != null ? var.capacity_id : null
+  identity     = var.identity_type != null ? { type = var.identity_type } : null
 }
 
-resource "fabric_workspace_role_assignment" "precon_datasummit_ws_contributor" {
+resource "fabric_workspace_role_assignment" "fab_ws_role_assign" {
+  for_each       = { for idx, assignment in var.role_assignment_list : tostring(idx) => assignment }
   workspace_id   = fabric_workspace.fab_ws.id
-  principal_id   = azuread_group.data_summit_ws_contributors.object_id
-  principal_type = "Group"
-  role           = "Contributor"
+  principal_id   = each.value.principal_id
+  principal_type = each.value.principal_type
+  role           = each.value.role
 }
