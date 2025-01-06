@@ -16,15 +16,15 @@ output "capacity_id" {
 }
 output "identity_type" {
   description = "The identity type of the Workspace"
-  value       = fabric_workspace.fab_ws.identity[0].type
+  value       = fabric_workspace.fab_ws.identity.type
 }
 output "identity_application_id" {
   description = "The identity application_id of the Workspace"
-  value       = fabric_workspace.fab_ws.identity[0].application_id
+  value       = fabric_workspace.fab_ws.identity.application_id
 }
 output "identity_service_principal_id" {
   description = "The identity service principal_id of the Workspace"
-  value       = fabric_workspace.fab_ws.identity[0].service_principal_id
+  value       = fabric_workspace.fab_ws.identity.service_principal_id
 }
 output "onelake_blob_endpoint" {
   description = "The OneLake Blob endpoint of the Workspace"
