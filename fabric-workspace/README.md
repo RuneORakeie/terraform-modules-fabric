@@ -82,3 +82,20 @@ module "test_module" {
   ]
 }
 ```
+### Outputs
+
+| Name | Description |
+|------|-------------|
+| id | "The Workspace ID |
+| display_name | The Workspace display name |
+| description | The Workspace description |
+| capacity_id | The ID of the Fabric Capacity assigned to the Workspace |
+| identity_type | The identity type of the Workspace |
+| identity_application_id | The identity application_id of the Workspace |
+| identity_service_principal_id | The identity service principal_id of the Workspace |
+| onelake_blob_endpoint | The OneLake Blob endpoint of the Workspace |
+| onelake_dfs_endpoint | The OneLake DFS endpoint of the Workspace |
+| capacity_assignment_progress | A Workspace assignment to capacity progress status |
+| capacity_region | The region of the capacity associated with this workspace |
+| type | The Workspace type |
+| role_assignment_list | The list of role assignments definitions created for the Workspace |
