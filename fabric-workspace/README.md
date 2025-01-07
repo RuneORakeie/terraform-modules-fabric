@@ -86,7 +86,7 @@ module "test_module" {
 
 | Name | Description |
 |------|-------------|
-| id | "The Workspace ID |
+| id | The Workspace ID |
 | display_name | The Workspace display name |
 | description | The Workspace description |
 | capacity_id | The ID of the Fabric Capacity assigned to the Workspace |
