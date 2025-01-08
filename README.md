@@ -46,12 +46,12 @@ This project is licensed under the MIT License. You are free to use, modify, and
 By working together, we can build a reliable, production-ready set of Terraform modules for Microsoft Fabric resources that will help organizations of all sizes succeed in the cloud. Thank you for your interest, and happy building!
 
 ## Fabric APIs that support service principal/managed identity authentication (2025.01.08)
-<a href=https://learn.microsoft.com/en-us/rest/api/fabric/articles/>Fabric REST API documentation</a>
+<a href="https://learn.microsoft.com/en-us/rest/api/fabric/articles/">Fabric REST API documentation</a>
 | Name | Group | TF resource exists?| Alternative TF module exists? |
-|------|-------|--------------------|-------------------------------|
+|-------------------------------------|-------|--------------------|-------------------------------|
 | Connections | Core | No | No |
 | Gateway | Core | No | No |
-| Workspace Managed Endpoint| Core | No | No |
+| Managed Private Endpoint (Workspace)| Core | No | No |
 | OneLake Data Access Roles | Core | No | No |
 | OneLake Shortcut| Core | No | No |
 | Workspace| Core | fabric_workspace | Yes (incl role assignments) |
