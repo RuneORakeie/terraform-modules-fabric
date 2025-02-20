@@ -49,6 +49,7 @@ locals {
     EventHub = {
       singleSignOnType     = "None"
       connectionEncryption = "Encrypted"
+      skipTestConnection   = true
       credentials          = local.credentials["EventHub"]
     }
   }
