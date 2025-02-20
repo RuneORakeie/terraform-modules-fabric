@@ -15,7 +15,7 @@ output "api_data" {
 
 output "create_response" {
   description = "The raw body of the HTTP response returned when creating the object (only shown when debug = true)"
-  value       = var.debug ? restapi_object.fabric_connection.create_data : null
+  value       = var.debug ? restapi_object.fabric_connection.create_response : null
 }
 
 

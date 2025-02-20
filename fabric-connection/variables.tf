@@ -86,7 +86,7 @@ variable "connection_role_assignments" {
   validation {
     condition = alltrue([
       for assignment in var.connection_role_assignments :
-      contains(["Owner"], assignment.role) # Adjust allowed roles based on your needs
+      contains(["Owner", "User", "UserWithReshare"], assignment.role) # Adjust allowed roles based on your needs
     ])
     error_message = "Role must be: Owner"
   }
