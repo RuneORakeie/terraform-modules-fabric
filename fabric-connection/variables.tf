@@ -88,7 +88,7 @@ variable "connection_role_assignments" {
       for assignment in var.connection_role_assignments :
       contains(["Owner", "User", "UserWithReshare"], assignment.role) # Adjust allowed roles based on your needs
     ])
-    error_message = "Role must be: Owner"
+    error_message = "Principal type must be one of: Owner, User, UserWithReshare."
   }
 
   validation {
