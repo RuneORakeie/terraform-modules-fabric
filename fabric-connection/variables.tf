@@ -48,7 +48,6 @@ variable "eventhub_credentials" {
   default     = null
   description = "Credentials for EventHub connection"
   sensitive   = true
-  ephemeral   = true
 }
 variable "privacy_level" {
   type        = string
