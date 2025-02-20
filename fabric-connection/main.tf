@@ -1,3 +1,16 @@
+
+######################################
+#             Provider               #
+######################################
+terraform {
+  required_version = ">= 1.8, < 2.0"
+  required_providers {
+    ## Microsoft Fabric REST API 
+    restapi = {
+      source = "mastercard/restapi"
+    }
+  }
+}
 # Create connection resource
 resource "restapi_object" "fabric_connection" {
   path = "/connections"
