@@ -31,8 +31,9 @@ locals {
       parameters     = local.connection_parameters["Web"]
     }
     EventHub = {
-      type       = var.connection_type
-      parameters = local.connection_parameters["EventHub"]
+      type           = var.connection_type
+      creationMethod = ""
+      parameters     = local.connection_parameters["EventHub"]
     }
   }
 
