@@ -29,9 +29,9 @@ locals {
       credentialType = "Anonymous"
     }
     EventHub = {
-      credentialType      = "SharedAccessKey"
+      credentialType      = "SharedAccessSignature"
       sharedAccessKeyName = var.eventhub_credentials.shared_access_key_name
-      sharedAccessKey     = var.eventhub_credentials.shared_access_key
+      token               = var.eventhub_credentials.shared_access_key
     }
   }
 }
@@ -47,6 +47,7 @@ locals {
       credentials          = local.credentials["Web"]
     }
     EventHub = {
+      singleSignOnType     = "None"
       connectionEncryption = "Encrypted"
       credentials          = local.credentials["EventHub"]
     }
