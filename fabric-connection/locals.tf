@@ -24,6 +24,18 @@ locals {
     ]
   }
 
+  connection_details = {
+    Web = {
+      type           = var.connection_type
+      creationMethod = var.connection_type
+      parameters     = local.connection_parameters["Web"]
+    }
+    EventHub = {
+      type       = var.connection_type
+      parameters = local.connection_parameters["EventHub"]
+    }
+  }
+
   credentials = {
     Web = {
       credentialType = "Anonymous"

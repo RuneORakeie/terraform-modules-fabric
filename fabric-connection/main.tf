@@ -17,11 +17,7 @@ resource "restapi_object" "fabric_connection" {
   data = jsonencode({
     "connectivityType" : var.connectivity_type,
     "displayName" : var.connection_name,
-    "connectionDetails" : {
-      "type" : var.connection_type,
-      "creationMethod" : var.connection_type,
-      "parameters" : local.connection_parameters[var.connection_type]
-    },
+    "connectionDetails" : local.connection_details[var.connection_type],
     "privacyLevel" : var.privacy_level,
     "credentialDetails" : local.credential_details[var.connection_type]
   })
