@@ -13,12 +13,12 @@ locals {
     EventHub = [
       {
         dataType = "Text"
-        name     = "eventHubNamespace"
+        name     = "endpoint"
         value    = var.eventhub_parameters.namespace
       },
       {
         dataType = "Text"
-        name     = "eventHubName"
+        name     = "entityPath"
         value    = var.eventhub_parameters.name
       }
     ]
@@ -32,7 +32,7 @@ locals {
     }
     EventHub = {
       type           = var.connection_type
-      creationMethod = "Eventhub"
+      creationMethod = "${var.connection_type}.Contents"
       parameters     = local.connection_parameters["EventHub"]
     }
   }
@@ -42,9 +42,9 @@ locals {
       credentialType = "Anonymous"
     }
     EventHub = {
-      credentialType      = "SharedAccessSignature"
-      sharedAccessKeyName = var.eventhub_credentials.shared_access_key_name
-      token               = var.eventhub_credentials.shared_access_key
+      credentialType = "Basic"
+      username       = var.eventhub_credentials.shared_access_key_name
+      password       = var.eventhub_credentials.shared_access_key
     }
   }
 }
