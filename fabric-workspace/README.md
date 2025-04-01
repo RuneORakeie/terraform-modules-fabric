@@ -21,7 +21,7 @@ module my_fab_ws {
 |capacity_id|The ID of the Fabric Capacity to assign to the Workspace|string||no|
 |description|The Workspace description|string||no|
 |identity_type|The identity type of the Workspace. The only valid value is `SystemAssigned`|string||yes|
-|role_assignment_list|A list of role assignments definitions to create for the Workspace. See below||no|
+|role_assignment_list|A list of role assignments definitions to create for the Workspace. See below|||no|
 
 #### <ins>role_assignment_list definition:</ins>
 | Name | Description | Type | Default | Required |

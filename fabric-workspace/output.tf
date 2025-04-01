@@ -28,11 +28,11 @@ output "identity_service_principal_id" {
 }
 output "onelake_blob_endpoint" {
   description = "The OneLake Blob endpoint of the Workspace"
-  value       = fabric_workspace.fab_ws.onelake_endpoints[0].blob_endpoint
+  value       = fabric_workspace.fab_ws.onelake_endpoints.blob_endpoint
 }
 output "onelake_dfs_endpoint" {
   description = "The OneLake DFS endpoint of the Workspace"
-  value       = fabric_workspace.fab_ws.onelake_endpoints[0].dfs_endpoint
+  value       = fabric_workspace.fab_ws.onelake_endpoints.dfs_endpoint
 }
 output "capacity_assignment_progress" {
   description = "A Workspace assignment to capacity progress status"
