@@ -6,7 +6,7 @@ terraform {
   required_providers {
     fabric = {
       source  = "microsoft/fabric"
-      version = "~> 0.1.0-beta.9"
+      version = "~> 1"
     }
   }
 }
@@ -19,9 +19,11 @@ resource "fabric_workspace" "fab_ws" {
 }
 
 resource "fabric_workspace_role_assignment" "fab_ws_role_assign" {
-  for_each       = { for idx, assignment in var.role_assignment_list : tostring(idx) => assignment }
-  workspace_id   = fabric_workspace.fab_ws.id
-  principal_id   = each.value.principal_id
-  principal_type = each.value.principal_type
-  role           = each.value.role
+  for_each     = { for idx, assignment in var.role_assignment_list : tostring(idx) => assignment }
+  workspace_id = fabric_workspace.fab_ws.id
+  role         = each.value.role
+  principal = {
+    id   = each.value.principal_id
+    type = each.value.principal_type
+  }
 }
